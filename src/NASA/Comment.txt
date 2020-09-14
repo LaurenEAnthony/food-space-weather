@@ -1,0 +1,13 @@
+if (this.props.location.latitude !== prevProps.location.latitude) {
+      const myImage = document.querySelector('img');
+      let latitude = this.props.location.latitude;
+      let longitude = this.props.location.longitude;
+      const nasaURL = `https://api.nasa.gov/planetary/earth/imagery?lon=${longitude}&lat=${latitude}&date=2018-01-01&dim=0.15&api_key=L4chJoMiegg07Kxfh4Fprho5kBMbQJxaJtyf5Qax`;
+      }
+
+      fetch(this.props.nasaUrl)
+  .then((res) => res.json())
+  .then((json: NASAResponse) => {
+    console.log(json);
+    this.setState({ NASAInformation: json.results });
+  });

@@ -1,6 +1,7 @@
 import { Container, Divider } from "@material-ui/core";
 import * as React from "react";
 import "./App.css";
+import NASA from "./NASA/NASA";
 import Restaurants from './Restaurants/Restaurants'
 import OpenWeather from "./openWeather";
 
@@ -38,7 +39,9 @@ class App extends React.Component {
           <Restaurants />
           {/* <Restaurants location={this.state}  /> */}    
         </Container>
-        <Container>NASA</Container>
+        <Container>
+          <NASA/>
+        </Container>
         <Container>
           <OpenWeather location={this.state} />
         </Container>
