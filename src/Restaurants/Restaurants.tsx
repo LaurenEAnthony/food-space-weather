@@ -7,12 +7,18 @@ import RestaurantDisplay from './RestaurantDisplay';
 
 
 export interface RestaurantsProps {
-    // location: any; 
+    location: Location; 
 }
+
+export interface Location {
+    latitude: number;
+    longitude: number;
+  }
  
 export interface RestaurantsState {
     restaurantsInformation: any;
 }
+
  
 class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
 
@@ -23,13 +29,13 @@ class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
     }
 
    
-    componentDidMount() {
-        // let latitude = this.props.location.latitude;
-        // let longitude = this.props.location.latitude;
-        // const urlZomato = `https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longtitude}`
+    componentDidUpdate(prevProps: RestaurantsProps) {
+    if (this.props.location.latitude !== prevProps.location.latitude) {
+        let latitude = this.props.location.latitude;
+        let longitude = this.props.location.longitude;
+        const urlZomato = `https://developers.zomato.com/api/v2.1/geocode?lat=${latitude}&lon=${longitude}`
 
-
-        const urlZomato = "https://developers.zomato.com/api/v2.1/geocode?lat=40.1940698&lon=-85.3833703"
+        // const urlZomato = "https://developers.zomato.com/api/v2.1/geocode?lat=40.1940698&lon=-85.3833703"
 
         fetch(urlZomato, {
             method: 'GET',
@@ -46,7 +52,7 @@ class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
             alert ('Sorry! There are no restaurants near by.');
         })
        }
-
+    }
 
 
     render() { 

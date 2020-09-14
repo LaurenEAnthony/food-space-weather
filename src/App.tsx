@@ -36,8 +36,8 @@ class App extends React.Component {
       <div>
         <h1>FOOD SPACE WEATHER</h1>
         <Container>
-          <Restaurants />
-          {/* <Restaurants location={this.state}  /> */}    
+          {/* <Restaurants /> */}
+          {/* <Restaurants location={this.state}  />     */}
         </Container>
         <Container>
           <NASA/>
