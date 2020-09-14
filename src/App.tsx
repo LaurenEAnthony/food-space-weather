@@ -5,10 +5,17 @@ import NASA from "./NASA/NASA";
 import Restaurants from './Restaurants/Restaurants'
 import OpenWeather from "./openWeather";
 
-class App extends React.Component {
+export interface AppState {
+  latitude: number;
+  longitude: number;
+}
+
+export interface AppProps {}
+
+class App extends React.Component<AppProps, AppState> {
   constructor(props: any) {
     super(props);
-    this.state = { latitude: null, longitude: null };
+    this.state = { latitude: 0, longitude: 0 };
     console.log(this.state);
   }
 
