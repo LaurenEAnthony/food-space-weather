@@ -6,6 +6,8 @@ function App() {
   return <div>
     FOOD SPACE WEATHER
     <Restaurants />
+
+    {/* <Restaurants location={this.state}  /> */}
     </div>;
 }
 
