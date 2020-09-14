@@ -1,17 +1,17 @@
 import React from 'react';
 import {RestaurantsResponse, NearbyRestaurant} from './RestaurantsInterface';
+import RestaurantDisplay from './RestaurantDisplay';
 
 
 //keyZomato = "85be495d90cb96dd37146770e8cccbce";
 
 
 export interface RestaurantsProps {
-    // location: any
-    
+    // location: any; 
 }
  
 export interface RestaurantsState {
-    restaurantsInformation: any
+    restaurantsInformation: any;
 }
  
 class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
@@ -47,17 +47,19 @@ class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
         })
        }
 
+
+
     render() { 
         return (<div>
-                <h3>Restaurants near by:</h3>
-                
-            <li>         
+            
+                <h3 style={{ margin: "10px", alignItems: "center"}}>Restaurants near by:</h3>
+            <ul>         
                 {this.state.restaurantsInformation.length > 0 ?
                 (this.state.restaurantsInformation.map
                 ((restaurant: NearbyRestaurant, index: number) => 
-                (<p key={index}> {restaurant.restaurant.name}</p>))) :
-                (<h3>Please try another location!</h3>)}      
-            </li>
+                (<RestaurantDisplay  restaurant = {restaurant} key = {index}/>))) :
+                (<React.Fragment></React.Fragment>)}  
+            </ul>
 
               </div>);
             }
@@ -65,5 +67,5 @@ class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
  
 export default Restaurants;
 
-
+{/* <ul key={index}> {restaurant.restaurant.name}</ul> */}
 
