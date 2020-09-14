@@ -1,6 +1,7 @@
 import { Container, Divider } from "@material-ui/core";
 import * as React from "react";
 import "./App.css";
+import Restaurants from './Restaurants/Restaurants'
 import OpenWeather from "./openWeather";
 
 class App extends React.Component {
@@ -33,7 +34,10 @@ class App extends React.Component {
     return (
       <div>
         <h1>FOOD SPACE WEATHER</h1>
-        <Container>ZOMATO</Container>
+        <Container>
+          <Restaurants />
+          {/* <Restaurants location={this.state}  /> */}    
+        </Container>
         <Container>NASA</Container>
         <Container>
           <OpenWeather location={this.state} />
@@ -41,6 +45,7 @@ class App extends React.Component {
       </div>
     );
   }
+
 }
 
 export default App;
