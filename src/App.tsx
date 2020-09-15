@@ -32,14 +32,6 @@ const theme = createMuiTheme({
     },
   },
 });
-// const useStyles = makeStyles({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   title: {
-//     flexGrow: 1,
-//   }
-// });
 
 export const styles = (theme: Theme) =>
   createStyles ({
@@ -91,7 +83,7 @@ class App extends React.Component<AppProps, AppState> {
 
       <Grid container spacing={3} style={{ padding: "1px"}}>
 ​
-          <Grid item xs={4}>
+          <Grid item xs={5}>
             <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>Hungry? Check this out!</b></h1>
             <Restaurants location={this.state} />
           </Grid>
