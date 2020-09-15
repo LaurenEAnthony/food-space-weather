@@ -40,7 +40,7 @@ class NASA extends React.Component<NASAProps, NASAState> {
   render() {
     return (
       <div>
-        <h4>NASA Image:</h4>
+        <h4>Satelite Image of Your Location:</h4>
         <img src={this.state.NASAInformation} alt="" style={{height: "460px" }}/>
       </div>
     );
