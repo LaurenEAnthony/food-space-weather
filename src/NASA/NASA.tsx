@@ -23,7 +23,7 @@ class NASA extends React.Component<NASAProps, NASAState> {
     if (this.props.location.latitude !== prevProps.location.latitude) {
       let latitude = this.props.location.latitude;
       let longitude = this.props.location.longitude;
-      const nasaURL = `https://api.nasa.gov/planetary/earth/imagery?lon=${longitude}&lat=${latitude}&date=2018-01-01&dim=0.15&api_key=L4chJoMiegg07Kxfh4Fprho5kBMbQJxaJtyf5Qax`;
+      const nasaURL = `https://api.nasa.gov/planetary/earth/imagery?lon=${longitude}&lat=${latitude}&date=2020-09-01&dim=0.15&api_key=L4chJoMiegg07Kxfh4Fprho5kBMbQJxaJtyf5Qax`;
       fetch(nasaURL)
         .then((response) => response.blob())
         .then((myBlob) => {
@@ -40,8 +40,10 @@ class NASA extends React.Component<NASAProps, NASAState> {
   render() {
     return (
       <div>
+
         <h4 style={{backgroundColor: '#4E937A', padding: "10px"}}>Satelite Image of Your Location:</h4>
-        <img src={this.state.NASAInformation} alt="" style={{height: "460px" }}/>
+        <img src={this.state.NASAInformation} alt="" style={{maxWidth: "100%" }}/>
+
       </div>
     );
   }

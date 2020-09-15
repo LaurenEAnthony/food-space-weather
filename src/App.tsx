@@ -97,7 +97,7 @@ class App extends React.Component<AppProps, AppState> {
             <NASA location={this.state}/>
           </Grid>
 
-          {/* <Grid item xs={2}>
+          {/* <Grid item xs={2}> 
             <NASA />
           </Grid> */}
 
