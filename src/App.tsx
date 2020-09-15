@@ -1,9 +1,9 @@
-import { Container, Divider } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import * as React from "react";
 import "./App.css";
 import NASA from "./NASA/NASA";
-import Restaurants from './Restaurants/Restaurants'
-import OpenWeather from "./openWeather";
+import Restaurants from "./Restaurants/Restaurants";
+import OpenWeather from "./openWeather/openWeather";
 
 export interface AppState {
   latitude: number;
@@ -44,10 +44,10 @@ class App extends React.Component<AppProps, AppState> {
         <h1>FOOD SPACE WEATHER</h1>
         <Container>
           <Restaurants />
-          {/* <Restaurants location={this.state}  /> */}    
+          {/* <Restaurants location={this.state}  /> */}
         </Container>
         <Container>
-          <NASA/>
+          <NASA />
         </Container>
         <Container>
           <OpenWeather location={this.state} />
@@ -55,7 +55,6 @@ class App extends React.Component<AppProps, AppState> {
       </div>
     );
   }
-
 }
 
 export default App;
