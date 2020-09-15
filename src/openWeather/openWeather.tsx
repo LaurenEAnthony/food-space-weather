@@ -110,19 +110,19 @@ class OpenWeather extends React.Component<OpenWeatherProps, OpenWeatherState> {
               </TableRow>
               <TableRow>
                 <TableCell>Temperature:</TableCell>
-                <TableCell>{this.state.mainInfo.temp}</TableCell>
+                <TableCell>{this.state.mainInfo.temp}&deg;</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>Feels Like:</TableCell>
-                <TableCell>{this.state.mainInfo.feels_like}</TableCell>
+                <TableCell>{this.state.mainInfo.feels_like}&deg;</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>Min:</TableCell>
-                <TableCell>{this.state.mainInfo.temp_min}</TableCell>
+                <TableCell>{this.state.mainInfo.temp_min}&deg;</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>Max:</TableCell>
-                <TableCell>{this.state.mainInfo.temp_max}</TableCell>
+                <TableCell>{this.state.mainInfo.temp_max}&deg;</TableCell>
               </TableRow>
             </TableBody>
           </Table>
