@@ -94,7 +94,7 @@ class App extends React.Component<AppProps, AppState> {
             <OpenWeather location={this.state} />
 
             <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>Where am I?</b></h1>
-            <NASA />
+            <NASA location={this.state}/>
           </Grid>
 
           {/* <Grid item xs={2}>
