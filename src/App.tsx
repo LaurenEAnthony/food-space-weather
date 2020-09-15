@@ -73,6 +73,7 @@ class App extends React.Component<AppProps, AppState> {
   render() {
     const { classes } = this.props;
     return (
+
       <MuiThemeProvider theme={theme}>
         <div style={{ padding: "1px"}}>
           <AppBar position="static" color="secondary">
@@ -103,7 +104,6 @@ class App extends React.Component<AppProps, AppState> {
           </Grid>
         </div>
       </MuiThemeProvider>
-
     );
   }
 }
