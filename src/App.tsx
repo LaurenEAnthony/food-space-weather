@@ -7,6 +7,7 @@ import OpenWeather from "./openWeather/openWeather";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import Grid from '@material-ui/core/Grid';
 import { withStyles, createStyles } from "@material-ui/core";
 import {
   unstable_createMuiStrictModeTheme as createMuiTheme,
@@ -18,7 +19,7 @@ const theme = createMuiTheme({
       main: "#604439",
     },
     secondary: {
-      main: "#B69FF8",
+      main: "#fff8dc",
     },
     error: {
       main: "#111344",
@@ -42,7 +43,10 @@ const theme = createMuiTheme({
 
 export const styles = (theme: Theme) =>
   createStyles ({
-    root: {backgroundColor: 'red'}
+    // root: {backgroundColor: 'red'}
+    root: {
+      flexGrow: 1,
+    },
   });
 export interface AppState {
   latitude: number;
@@ -78,24 +82,36 @@ class App extends React.Component<AppProps, AppState> {
     const { classes } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
-        <div style={{ padding: "5px" }}>
+        <div style={{ padding: "1px"}}>
           <AppBar position="static" color="secondary">
             <Toolbar>
-              <Typography variant="h3">FOOD SPACE WEATHER</Typography>
+              <Typography variant="h5" style={{ padding: "1px", color: "#4E937A"}}><b>FOOD SPACE WEATHER</b></Typography>
             </Toolbar>
           </AppBar>
+
+      <Grid container spacing={3} style={{ padding: "1px"}}>
 ​
-          <Container>
+          <Grid item xs={4}>
+            <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>Hungry? Check this out!</b></h1>
             <Restaurants location={this.state} />
-          </Container>
-          <Container>
-            <NASA />
-          </Container>
-          <Container>
+          </Grid>
+
+          <Grid item xs={4}>
+            <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>What shoud I wear?</b></h1>
             <OpenWeather location={this.state} />
-          </Container>
+
+            <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>Where am I?</b></h1>
+            <NASA />
+          </Grid>
+
+          {/* <Grid item xs={2}>
+            <NASA />
+          </Grid> */}
+
+          </Grid>
         </div>
       </MuiThemeProvider>
+
     );
   }
 }

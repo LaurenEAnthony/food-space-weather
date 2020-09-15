@@ -58,7 +58,6 @@ class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
     render() { 
         return (<div>
             
-                <h3 style={{ margin: "10px", alignItems: "center"}}>Restaurants near by:</h3>
             <ul>         
                 {this.state.restaurantsInformation.length > 0 ?
                 (this.state.restaurantsInformation.map
