@@ -90,7 +90,7 @@ class App extends React.Component<AppProps, AppState> {
           </Grid>
 
           <Grid item xs={4}>
-            <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>What shoud I wear?</b></h1>
+            <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>What should I wear?</b></h1>
             <OpenWeather location={this.state} />
 
             <h1 style={{ margin: "10px", alignContent: "center", paddingLeft: "50px", color: 'LemonChiffon' }}><b>Where am I?</b></h1>

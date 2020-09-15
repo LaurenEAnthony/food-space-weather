@@ -78,26 +78,26 @@ class OpenWeather extends React.Component<OpenWeatherProps, OpenWeatherState> {
       <div>
         <TableContainer component={Paper}>
           <Table>
-            <TableHead>
+            <TableHead style={{backgroundColor: '#4E937A'}}>
               <TableRow>
                 <TableCell>
                   <h3>CURRENT WEATHER:</h3>
                 </TableCell>
                 <TableCell>
-                  Fahrenheit{" "}
+                  <b>Fahrenheit{" "}</b>
                   <Switch
                     checked={this.state.celsius}
                     onChange={this.toggle}
                     name="celsius"
                     color="default"
-                  />{" "}
-                  Celsius
+                  /><b>{" "}
+                  Celsius</b>
                 </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody style={{backgroundColor: 'cornsilk'}}>
               <TableRow>
-                <TableCell>Description:</TableCell>
+                <TableCell><b>Description: </b></TableCell>
                 {this.state.weatherInfo.length > 0 ? (
                   <TableCell>
                     {this.state.weatherInfo[0].main +
@@ -109,19 +109,19 @@ class OpenWeather extends React.Component<OpenWeatherProps, OpenWeatherState> {
                 )}
               </TableRow>
               <TableRow>
-                <TableCell>Temperature:</TableCell>
+                <TableCell>T<b>emperature:</b></TableCell>
                 <TableCell>{this.state.mainInfo.temp}&deg;</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Feels Like:</TableCell>
+                <TableCell><b>Feels Like</b></TableCell>
                 <TableCell>{this.state.mainInfo.feels_like}&deg;</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Min:</TableCell>
+                <TableCell><b>Min:</b></TableCell>
                 <TableCell>{this.state.mainInfo.temp_min}&deg;</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Max:</TableCell>
+                <TableCell><b>Max:</b></TableCell>
                 <TableCell>{this.state.mainInfo.temp_max}&deg;</TableCell>
               </TableRow>
             </TableBody>
