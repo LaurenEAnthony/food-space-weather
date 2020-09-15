@@ -73,5 +73,5 @@ class Restaurants extends React.Component<RestaurantsProps, RestaurantsState> {
  
 export default Restaurants;
 
-{/* <ul key={index}> {restaurant.restaurant.name}</ul> */}
+
 

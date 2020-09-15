@@ -1,14 +1,47 @@
 import { Container, Divider } from "@material-ui/core";
-import * as React from "react";
+import React from "react";
 import "./App.css";
 import NASA from "./NASA/NASA";
 import Restaurants from './Restaurants/Restaurants'
-import OpenWeather from "./openWeather";
+import OpenWeather from "./openWeather/openWeather";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from "@material-ui/core/styles";
 
-class App extends React.Component {
+
+// const useStyles = makeStyles({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   title: {
+//     flexGrow: 1,
+//   }
+// });
+
+const styles = theme: any => ({
+  root: {
+    backgroundColor: "red"
+  }
+});
+
+export interface AppState {
+  latitude: number;
+  longitude: number;
+}
+
+export interface AppProps {}
+
+
+
+class App extends React.Component<AppProps, AppState> {
+
+ 
+
+
   constructor(props: any) {
     super(props);
-    this.state = { latitude: null, longitude: null };
+    this.state = { latitude: 0, longitude: 0 };
     console.log(this.state);
   }
 
@@ -29,15 +62,25 @@ class App extends React.Component {
       console.log(this.state);
     };
     getLocation();
+
   }
+ 
+  
 
   render() {
     return (
-      <div>
-        <h1>FOOD SPACE WEATHER</h1>
+      <div style={{padding: "5px"}}>
+    
+    <AppBar position="static">
+      <Toolbar>  
+      <Typography variant="h3">
+        FOOD SPACE WEATHER
+     </Typography>
+      </Toolbar> 
+    </AppBar>
+
         <Container>
-          {/* <Restaurants /> */}
-          {/* <Restaurants location={this.state}  />     */}
+          <Restaurants location={this.state}  />    
         </Container>
         <Container>
           <NASA/>
@@ -51,4 +94,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default withStyles(styles, { withTheme: true })(App);
