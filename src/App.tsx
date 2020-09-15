@@ -3,12 +3,19 @@ import * as React from "react";
 import "./App.css";
 import NASA from "./NASA/NASA";
 import Restaurants from './Restaurants/Restaurants'
-import OpenWeather from "./openWeather";
+import OpenWeather from "./openWeather/openWeather";
 
-class App extends React.Component {
+export interface AppState {
+  latitude: number;
+  longitude: number;
+}
+
+export interface AppProps {}
+
+class App extends React.Component<AppProps, AppState> {
   constructor(props: any) {
     super(props);
-    this.state = { latitude: null, longitude: null };
+    this.state = { latitude: 0, longitude: 0 };
     console.log(this.state);
   }
 
@@ -40,7 +47,7 @@ class App extends React.Component {
           {/* <Restaurants location={this.state}  /> */}    
         </Container>
         <Container>
-          <NASA/>
+          <NASA location={this.state}/>
         </Container>
         <Container>
           <OpenWeather location={this.state} />
