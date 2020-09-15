@@ -54,7 +54,7 @@ class OpenWeather extends React.Component<OpenWeatherProps, OpenWeatherState> {
   fetchChange() {
     let latitude = this.props.location.latitude;
     let longitude = this.props.location.longitude;
-    if (this.state.celsius == true) {
+    if (this.state.celsius === true) {
       let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=78dd927150ebf2ee27f26dc466f275d7`;
       fetch(weatherUrl)
         .then((res) => res.json())
