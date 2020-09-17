@@ -16,7 +16,7 @@ export interface Location {
   }
  
 export interface RestaurantsState {
-    restaurantsInformation: any;
+    restaurantsInformation: NearbyRestaurant[];
 }
 
  
